@@ -55,6 +55,11 @@ describe('growUp',() => {
     pet.growUp();
     expect(pet.fitness).toEqual(7);
   })
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('Fido');
+    pet.age = 30;
+    expect(pet.growUp).toThrow('Your pet is no longer alive :(');
+  });
 })
 
 describe('walk',() => {
@@ -70,6 +75,11 @@ describe('walk',() => {
     pet.walk();
     expect(pet.fitness).toEqual(10);
   });
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('Fido');
+    pet.age = 30;
+    expect(pet.walk).toThrow('Your pet is no longer alive :(');
+  });
 })
 
 describe('feed',() => {
@@ -79,29 +89,40 @@ describe('feed',() => {
     pet.feed();
     expect(pet.hunger).toEqual(0);
   });
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('Fido');
+    pet.age = 30;
+    expect(pet.feed).toThrow('Your pet is no longer alive :(');
+  });
+
 })
 
 describe('checkup',() => {
   it('returns I need a walk if fitness is 3 or less', () => {
     const pet = new Pet('fido');
     pet.fitness = 2;
-    expect(pet.checkup()).toBe("I need a walk");
+    expect(pet.checkup()).toBe('I need a walk');
   });
   it('returns I am hungry if hunger is 5 or more', () => {
     const pet = new Pet('fido');
     pet.hunger = 5;
-    expect(pet.checkup()).toBe("I am hungry");
+    expect(pet.checkup()).toBe('I am hungry');
   });
   it('returns I am hungry AND I need a walk if fitness 3 or less & hunger is 5 or more', () => {
     const pet = new Pet('fido');
     pet.fitness = 1;
     pet.hunger = 5;
-    expect(pet.checkup()).toBe("I am hungry AND I need a walk");
+    expect(pet.checkup()).toBe('I am hungry AND I need a walk');
   });
   it('returns I feel great if fitness is more than 3 and hunger is less than 5', () => {
     const pet = new Pet('fido');
     pet.fitness = 5;
     pet.hunger = 4;
-    expect(pet.checkup()).toBe("I feel great!");
+    expect(pet.checkup()).toBe('I feel great!');
+  });
+  it('returns your pet is no longer alive if pet is not alive', () => {
+    const pet = new Pet('Fido');
+    pet.age = 31;
+    expect(pet.checkup()).toBe('Your pet is no longer alive :(');
   });
 })

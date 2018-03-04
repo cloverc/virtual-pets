@@ -1,83 +1,53 @@
 # Virtual Pet
 
-Creating a JavaScript pet.
+A JavaScript pet with the following features:
+
+ - You can give them a name
+ - They can get older
+ - As they get older, they get hungrier and less fit
+ - You can walk your pet to increase it's fitness. 🏃
+ - You can feed your pet to decrease it's hunger. 🍕
+ - You can talk to your pet to see if it needs feeding or walking
+ - If your pet gets too hungry or unfit, it will DIE 💀
+ - If your pet gets to 30 days old it will DIE 😢
+
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Fork this repository and clone down your fork.
+
+Change into the cloned folder.
+
+There are two folders: /src and /__tests__. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Node REPL for feature testing
+Uses Jest for unit testing
 
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+Run npm install to install the necessary libraries required for Node.js to run.
 
-Say what the step will be
+You can initialize an NPM project using the command npm init.
+This will lead you through some steps to create a package.json file, the config file for your project.
 
-```
-Give the example
-```
+To install Jest, run npm install -D jest
 
-And repeat
+This will install Jest as a development dependency.
 
-```
-until finished
-```
+Alter the package.json file so that the test value is "jest".
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+This means that when you run npm test, it will run jest for you.
 ```
 
-### And coding style tests
+### Running the tests
 
-Explain what these tests test and why
+To test pets.js in Node REPL:
+    type `node` in commend line
+    type `const Pet = require('../src/pet');`
 
-```
-Give an example
-```
+To run unit tests using jest:
+    type `npm test -- pet`
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
